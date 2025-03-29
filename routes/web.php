@@ -15,4 +15,4 @@ Route::get('/', function () {
     Route::delete('personal/{personal}', 'destroy')->name('personal.destroy');
 }); */
 
-Route::resource('personal', PersonalController::class)->parameters(['personal' => 'id']);
+Route::resource('personal', PersonalController::class);

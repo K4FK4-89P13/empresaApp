@@ -7,7 +7,7 @@
     <h1>Lista de Personal</h1>
     <ul>
         @foreach ($personals as $personal)
-            <li> <a href="{{route('personal.show', $personal->id)}}">{{$personal->nombre}}</a> </li>
+            <li> <a href="{{route('personal.show', $personal)}}">{{$personal->nombre}}</a> </li>
         @endforeach
     </ul>
 @endsection

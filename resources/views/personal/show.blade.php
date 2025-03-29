@@ -12,7 +12,7 @@
     <p>Direccion: {{$personal->direccion}}</p>
     <p>Fecha de Ingreso: {{$personal->fecha_ingreso}}</p>
 
-    <form action="{{route('personal.destroy', $personal->id)}}" method="POST">
+    <form action="{{route('personal.destroy', $personal)}}" method="POST">
         @csrf
         @method('delete')
         <button type="submit" onclick="return confirm('¿Estas seguro de eliminar este registro?')">Eliminar</button>

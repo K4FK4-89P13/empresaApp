@@ -12,8 +12,8 @@ class PersonalController extends Controller
         return view('personal.index', compact('personals'));
     }
 
-    public function show($id) {
-        $personal = Personal::find($id);
+    public function show(Personal $personal) {
+        //$personal = Personal::find($id);
         return view('personal.show', compact('personal'));
     }
 
@@ -27,8 +27,8 @@ class PersonalController extends Controller
         return redirect()->route('personal.show', $personal->id);
     }
 
-    public function destroy($id) {
-        $personal = Personal::find($id);
+    public function destroy(Personal $personal) {
+        //$personal = Personal::find($id);
         $personal->delete();
         return redirect()->route('personal.index')->with('success', 'Registro eliminado correctamente');
     }
