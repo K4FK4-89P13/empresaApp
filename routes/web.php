@@ -4,8 +4,8 @@ use App\Http\Controllers\PersonalController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('home');
+})->name('home');
 
 /* Route::controller(PersonalController::class)->group(function() {
     Route::get('/personal', 'index')->name('personal.index');
