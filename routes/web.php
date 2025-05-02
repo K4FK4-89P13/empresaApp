@@ -3,6 +3,10 @@
 use App\Http\Controllers\PersonalController;
 use Illuminate\Support\Facades\Route;
 
+use App\Mail\ContactanosMailable;
+use Illuminate\Support\Facades\Mail;
+
+
 Route::get('/', function () {
     return view('home');
 })->name('home');
@@ -16,3 +20,10 @@ Route::get('/', function () {
 }); */
 
 Route::resource('personal', PersonalController::class);
+
+Route::get('contactanos', function() {
+    $correo = new ContactanosMailable;
+
+    Mail::to('destino@example.com')->send($correo);
+    return "<h1>Mensaje Enviado</h1>";
+});
