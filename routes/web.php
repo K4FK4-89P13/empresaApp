@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactanosController;
 use App\Http\Controllers\PersonalController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,9 +22,5 @@ Route::get('/', function () {
 
 Route::resource('personal', PersonalController::class);
 
-Route::get('contactanos', function() {
-    $correo = new ContactanosMailable;
-
-    Mail::to('destino@example.com')->send($correo);
-    return "<h1>Mensaje Enviado</h1>";
-});
+Route::get('contactanos', [ContactanosController::class, 'index'])->name('contactanos.index');
+Route::post('contactanos', [ContactanosController::class, 'store'])->name('contactanos.store');

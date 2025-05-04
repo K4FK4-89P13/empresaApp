@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +8,16 @@
 
     <style>
         h1{
-            color: cornflowerblue
+            color: turquoise;
         }
     </style>
 </head>
 <body>
     <h1>Correo Electronico</h1>
-    <p>Mensaje enviado desde Laravel</p>
+    <p>Primer correo enviado por Laravel</p>
+    
+    <p><strong>Nombre: </strong> {{$contacto['name']}}</p>
+    <p><strong>Correo: </strong> {{$contacto['correo']}}</p>
+    <p><strong>Mensaje: </strong> {{$contacto['mensaje']}}</p>
 </body>
 </html>
